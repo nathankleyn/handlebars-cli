@@ -1,0 +1,12 @@
+handlebars-cli — Template JSON properties into Handlebars templates from the CLI.
+
+USAGE:
+    handlebars-cli <JSON> <TEMPLATE>
+    handlebars-cli --help
+
+PARAMETERS:
+    JSON: A set of valid JSON to use as properties to interpolate into the provided template file.
+    TEMPLATE: A path to a valid Handlebars template.
+
+FLAGS:
+    --help: Prints this usage text.

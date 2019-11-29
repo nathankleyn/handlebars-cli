@@ -30,6 +30,8 @@ enum Error {
 
 type Result<T, E = Error> = std::result::Result<T, E>;
 
+static USAGE: &str = include_str!("../USAGE");
+
 fn main () -> () {
     let mut args = env::args();
     args.next(); // skip own filename
@@ -37,7 +39,7 @@ fn main () -> () {
     let (raw_props, raw_filename) = match (args.next(), args.next()) {
         (Some(raw_props), Some(raw_filename)) => (raw_props, raw_filename),
         _ => {
-            eprintln!("Usage: ./handlebars-cli '{{\"json\": \"data\"}}' template.hbs");
+            eprintln!("{}", USAGE);
             process::exit(1);
         },
     };
