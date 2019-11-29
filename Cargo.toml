@@ -1,0 +1,15 @@
+[package]
+name = "handlebars-cli"
+version = "1.0.0"
+authors = ["Nathan Kleyn <nathan@nathankleyn.com>"]
+edition = "2018"
+license = "MIT"
+
+[dependencies]
+handlebars = "3.0.0-beta.1"
+serde_json = "1.0.41"
+snafu = "0.6.0"
+
+[dev-dependencies]
+assert_cmd = "0.11"
+tempfile = "3.1.0"
