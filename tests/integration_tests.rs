@@ -1,4 +1,5 @@
 use assert_cmd::prelude::*;
+use predicates::prelude::*;
 use std::io::Write;
 use std::process::Command;
 use tempfile::NamedTempFile;
@@ -17,7 +18,7 @@ fn test_fails_with_usage_if_no_params() {
     when_binary_run!()
         .assert()
         .failure()
-        .stderr("Usage: ./handlebars-cli '{\"json\": \"data\"}' template.hbs\n");
+        .stderr(predicate::str::contains("USAGE"));
 }
 
 #[test]
@@ -26,7 +27,7 @@ fn test_fails_if_only_one_param() {
         .arg("{}")
         .assert()
         .failure()
-        .stderr("Usage: ./handlebars-cli '{\"json\": \"data\"}' template.hbs\n");
+        .stderr(predicate::str::contains("USAGE"));
 }
 
 #[test]
