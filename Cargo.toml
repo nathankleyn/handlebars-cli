@@ -1,5 +1,6 @@
 [package]
 name = "handlebars-cli"
+description = "Template JSON properties into Handlebars templates from the CLI."
 version = "1.0.0"
 authors = ["Nathan Kleyn <nathan@nathankleyn.com>"]
 edition = "2018"
